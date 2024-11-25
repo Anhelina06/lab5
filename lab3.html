@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andre about us</title>
+    <style>
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .block1, .block6 {
+            background-color: #c7d9f1;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .block1 h1, .block6 p {
+            margin: 0;
+            text-align: right;
+            flex-grow: 1;
+        }
+
+        .white-box {
+            background-color: #ffffff;
+            padding: 10px;
+            border: 2px solid #000000;
+            display: inline-block;
+        }
+
+        .content-wrapper {
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .block2, .block4 {
+            background-color: #fef9c3;
+            padding: 15px;
+            text-align: center;
+            width: 20%;
+            height: calc(100vh - 100px);
+            box-sizing: border-box;
+        }
+
+        .block3 {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            width: 60%;
+            height: calc(100vh - 180px);
+            box-sizing: border-box;
+        }
+
+        .block3 img {
+            max-width: 100%;
+            max-height: 100%;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .block5 {
+            background-color: #e0f5d1;
+            padding: 30px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        a {
+            color: #0000EE;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+
+            .block1, .block6 {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .block2, .block4, .block3, .block5 {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="block1">
+    <div class="white-box">Andre about us</div>
+    <p>Andre is a fine-dining restaurant</p>
+</div>
+
+<div class="content-wrapper">
+
+    <div class="block2">
+        It combines top cooking techniques with seasonal local ingredients to craft original culinary experiences.
+    </div>
+
+    <div class="block3">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td align="center" style="padding: 10px 0;">
+                    <img src=" https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/fa/c7/64/vu-depuis-notre-terrasse.jpg?w=1200&h=-1&s=1" alt="" style="width: 100%; max-width: 600px; height: auto; display: block; border: 0;">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="block4">
+        The menu is often inspired by the chef's artistic vision, offering a blend of flavors and textures that appeal to sophisticated palates.
+        The ambiance is elegant, providing a refined setting that enhances the dining experience.
+    </div>
+</div>
+
+<div class="block5">
+    The ambiance is elegant, providing a refined setting that enhances the dining experience.
+</div>
+
+<div class="block6">
+    <div class="white-box">
+        <a href="https://www.google.com/maps/place/Restaurant+ANDRE/@1.2794517,103.8377251,17z/data=!3m1!4b1!4m6!3m5!1s0x31da196df4bde867:0x3e4a168f0bc00481!8m2!3d1.2794517!4d103.8403!16s%2Fg%2F11g7z0pl1l?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D">
+            Our location here
+        </a>
+    </div>
+    <p>Andre creates a memorable journey through inventive dishes that reflect both tradition and innovation.</p>
+</div>
+
+</body>
+</html>

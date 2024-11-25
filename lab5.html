@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Implementation</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .block1, .block6 {
+            position: fixed;
+            width: 100vw;
+            height: 150px;
+            background: #c7d9f1;
+            border-bottom: solid 1px black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+
+        .block1 {
+            top: 0;
+        }
+
+        .block6 {
+            bottom: 0;
+            border-top: solid 1px black;
+        }
+
+        .block2, .block4 {
+            position: fixed;
+            width: 270px;
+            height: calc(100vh - 300px);
+            background: #fef9c3;
+            top: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block2 {
+            left: 0;
+            font-style: normal;
+        }
+
+        .block4 {
+            right: 0;
+        }
+
+        .block3 {
+            position: relative;
+            width: calc(100vw - 540px);
+            height: calc(100vh - 360px);
+            background: white;
+            margin-top: 150px;
+            left: 270px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .block5 {
+            position: fixed;
+            width: calc(100vw - 285px);
+            height: 60px;
+            background: #e0f5d1;
+            top: calc(100vh - 210px);
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: solid 1px black;
+            border-bottom: solid 1px black;
+        }
+
+        .controls-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .control {
+            flex: 1 1 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            min-width: 200px;
+        }
+
+        button, input {
+            margin: 10px 0;
+            font-size: 14px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover, input:hover {
+            background-color: #e0e0e0;
+        }
+
+        ol {
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="block1">1</div>
+<div class="block2" id="block2">2</div>
+<div class="block3">
+    <div class="controls-container">
+        <div class="control">
+            <button id="swap-texts">Поміняти текст блоків 1 та 6</button>
+        </div>
+        <div class="control">
+            <button id="toggle-italic">Курсив для тексту</button>
+        </div>
+        <div class="control">
+            <form id="rhombus-area-form">
+                <label for="diagonal1">Діагональ 1:</label><br>
+                <input type="number" id="diagonal1" required><br>
+                <label for="diagonal2">Діагональ 2:</label><br>
+                <input type="number" id="diagonal2" required><br>
+                <button type="submit">Обчислити площу ромба</button>
+            </form>
+        </div>
+        <div class="control">
+            <form id="triangle-form">
+                <label for="side-a">Сторона A:</label><br>
+                <input type="number" id="side-a" required><br>
+                <label for="side-b">Сторона B:</label><br>
+                <input type="number" id="side-b" required><br>
+                <label for="side-c">Сторона C:</label><br>
+                <input type="number" id="side-c" required><br>
+                <button type="submit">Перевірити трикутник</button>
+            </form>
+        </div>
+        <div class="control">
+            <button id="add-list-item">Додати елемент до списку</button>
+            <ol id="dynamic-list"></ol>
+            <button id="save-list">Зберегти список</button>
+            <button id="clear-list">Очистити список</button>
+        </div>
+    </div>
+</div>
+<div class="block4">4</div>
+<div class="block5">5</div>
+<div class="block6">6</div>
+
+<script>
+//блоки 1 і 6 міняємо
+    document.getElementById('swap-texts').addEventListener('click', () => {
+        const block1 = document.querySelector('.block1');
+        const block6 = document.querySelector('.block6');
+        [block1.textContent, block6.textContent] = [block6.textContent, block1.textContent];
+    });
+
+//площа ромба
+    document.getElementById('rhombus-area-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const d1 = +document.getElementById('diagonal1').value;
+        const d2 = +document.getElementById('diagonal2').value;
+        const area = (d1 * d2) / 2;
+        const resultElement = document.createElement('p');
+        resultElement.textContent = `Площа ромба: ${area}`;
+        document.querySelector('.block3').appendChild(resultElement);
+    });
+
+//побудова трикутника
+    document.getElementById('triangle-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const a = +document.getElementById('side-a').value;
+        const b = +document.getElementById('side-b').value;
+        const c = +document.getElementById('side-c').value;
+
+        const canFormTriangle = a + b > c && a + c > b && b + c > a;
+        const result = canFormTriangle ? 'Трикутник можна побудувати' : 'Трикутник неможливо побудувати';
+        alert(result);
+
+        document.cookie = `triangleCheck=${result}; path=/;`;
+    });
+//курсив
+    const block2 = document.getElementById('block2');
+    const savedItalic = localStorage.getItem('block2Italic');
+    if (savedItalic === 'true') block2.style.fontStyle = 'italic';
+
+    document.getElementById('toggle-italic').addEventListener('click', () => {
+        const isItalic = block2.style.fontStyle === 'italic';
+        block2.style.fontStyle = isItalic ? 'normal' : 'italic';
+        localStorage.setItem('block2Italic', !isItalic);
+    });
+//динамічний список
+    const dynamicList = document.getElementById('dynamic-list');
+
+    document.getElementById('add-list-item').addEventListener('click', () => {
+        const itemText = prompt("Введіть текст нового елемента:");
+        if (itemText) {
+            const newItem = document.createElement('li');
+            newItem.textContent = itemText;
+            newItem.style.backgroundColor = dynamicList.children.length % 2 === 0 ? 'black' : 'white';
+            newItem.style.color = dynamicList.children.length % 2 === 0 ? 'white' : 'black';
+            dynamicList.appendChild(newItem);
+        }
+    });
+
+    document.getElementById('save-list').addEventListener('click', () => {
+        const listItems = Array.from(dynamicList.children).map(item => item.textContent);
+        localStorage.setItem('dynamicList', JSON.stringify(listItems));
+        alert('Список збережено!');
+    });
+
+    document.getElementById('clear-list').addEventListener('click', () => {
+        dynamicList.innerHTML = '';
+        localStorage.removeItem('dynamicList');
+    });
+
+//завантаження списку
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedList = JSON.parse(localStorage.getItem('dynamicList') || '[]');
+        savedList.forEach(text => {
+            const newItem = document.createElement('li');
+            newItem.textContent = text;
+            dynamicList.appendChild(newItem);
+        });
+    });
+</script>
+</body>
+</html>

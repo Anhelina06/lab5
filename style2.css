@@ -1,0 +1,156 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar-left main sidebar-right"
+        "bottom-content bottom-content sidebar-right"
+        "footer footer footer";
+    grid-template-rows: 100px 1fr 50px 100px;
+    grid-template-columns: 270px 1fr 270px;
+    height: 100vh;
+}
+
+.block1 {
+    grid-area: header;
+    background-color: #c7d9f1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    font-size: 1.2rem;
+}
+
+.block1 .white-box-left {
+    background-color: white;
+    padding: 10px;
+    margin-left: 0;
+}
+
+.info-box-right {
+    text-align: right;
+    padding: 5px;
+}
+
+.block6 {
+    grid-area: footer;
+    background-color: #c7d9f1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-top: 1px solid black;
+}
+
+.block6 .white-box-left {
+    background-color: white;
+    padding: 10px;
+    margin-left: 0;
+}
+
+.menu-info-right {
+    text-align: right;
+    padding: 10px;
+}
+
+.block2 {
+    grid-area: sidebar-left;
+    background-color: #fef9c3;
+    padding: 20px;
+    text-align: left;
+    border-left: 2px solid #e0f5d1;
+    font-size: 1.1rem;
+}
+
+.block3 {
+    grid-area: main;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.block3 img.responsive-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+
+.block4 {
+    grid-area: sidebar-right;
+    background-color: #fef9c3;
+    padding: 20px;
+    box-sizing: border-box;
+    height: calc(100vh - 100px - 100px);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    font-size: 1.1rem;
+}
+.block5 {
+    grid-area: bottom-content;
+    background-color: #e0f5d1;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    height: auto;
+    font-size: 0.9rem;
+    font-family: 'Verdana', sans-serif;
+    z-index: 10;
+    overflow: visible;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+
+@media (max-width: 850px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar-left"
+            "sidebar-right"
+            "bottom-content"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    .block1, .block6 {
+        height: auto;
+    }
+
+    .block2, .block4 {
+        width: 100vw;
+        height: auto;
+        border: none;
+    }
+
+    .block3 {
+        width: calc(100vw - 20px);
+    }
+
+    .block5 {
+        height: 60px;
+    }
+
+    nav ul {
+        display: grid;
+        grid-template-rows: repeat(auto-fit, minmax(50px, 1fr)); /* Вертикальна структура */
+    }
+}

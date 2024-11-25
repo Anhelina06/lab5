@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .menu-bars {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .menu-bars div {
+            width: 30px;
+            height: 4px;
+            background-color: #333;
+        }
+
+        main img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .info {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .info h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .info p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service {
+            position: relative;
+            text-align: center;
+            width: 150px;
+            border: 2px solid #ff6600;
+            padding: 30px 10px 15px;
+            background-color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .service .icon {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 50px;
+            width: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .inverter-icon {
+            background-image: url('111.bmp');
+        }
+
+        .diagnostics-icon {
+            background-image: url('222.bmp');
+        }
+
+        .repair-icon {
+            background-image: url('333.bmp');
+        }
+
+        .monitoring-icon {
+            background-image: url('444.png');
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .service p {
+            margin-top: 30px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-bars div {
+                width: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">logo</div>
+    <div class="menu-bars">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+<main>
+    <img src="101.png" alt="Solar Panel">
+    <section class="info">
+        <h1>How do solar panels work?</h1>
+        <p>Solar panels convert sunlight into electricity, providing sustainable and clean energy for your home or business. Learn about our services below.</p>
+        <div class="services">
+            <div class="service">
+                <div class="icon inverter-icon"></div>
+                <p>Inverter Inspection</p>
+            </div>
+            <div class="service">
+                <div class="icon diagnostics-icon"></div>
+                <p>Complete Diagnostics</p>
+            </div>
+            <div class="service">
+                <div class="icon repair-icon"></div>
+                <p>Expert Solar Panel Repair</p>
+            </div>
+            <div class="service">
+                <div class="icon monitoring-icon"></div>
+                <p>Updates & Monitoring</p>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>© 2024 Solar Solutions. All rights reserved.</p>
+</footer>
+</body>
+</html>

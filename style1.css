@@ -1,0 +1,127 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header, .footer {
+    background-color: #c7d9f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header h1, .footer h2 {
+    background-color: white;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.header .info-box-right, .footer .menu-info-right {
+    text-align: right;
+}
+
+.header {
+    border-bottom: 1px solid black;
+    height: 150px;
+}
+
+.footer {
+    border-top: 1px solid black;
+    height: 150px;
+}
+
+.sidebar-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar {
+    background-color: #fef9c3;
+    width: 270px;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.main-content {
+    background-color: white;
+    flex-grow: 1;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+.main-content img.responsive-img {
+    width: calc(50% - 5px);
+    height: auto;
+    max-width: 100%;
+}
+
+.bottom-content {
+    background-color: #e0f5d1;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    height: 60px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    left: 0;
+    right: 270px;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 5px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+@media (max-width: 850px) {
+    .sidebar-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border: none;
+    }
+
+    .header, .footer {
+        height: auto;
+    }
+
+    .main-content img.responsive-img {
+        width: 100%;
+    }
+
+    .bottom-content {
+        left: 0;
+        right: 0;
+    }
+}

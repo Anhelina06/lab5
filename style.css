@@ -1,0 +1,146 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.block1, .block6 {
+    position: fixed;
+    width: 100vw;
+    height: 150px;
+    background: #c7d9f1;
+    border-bottom: solid 1px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 100; /* блок перекриє текст*/
+}
+
+.block1 {
+    top: 0;
+}
+
+.block6 {
+    bottom: 0;
+    border-top: solid 1px black;
+}
+
+.block2, .block4 {
+    position: fixed;
+    width: 270px;
+    height: calc(100vh - 300px);
+    background: #fef9c3;
+    top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block2 {
+    left: 0;
+}
+
+.block4 {
+    right: 0;
+}
+
+.block3 {
+    position: relative;
+    width: calc(100vw - 540px);
+    height: calc(100vh - 360px);
+    background: white;
+    margin-top: 150px;
+    left: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;/*текст приховати за межами блоку*/
+}
+
+.block5 {
+    position: fixed;
+    width: calc(100vw - 285px);
+    height: 60px;
+    background: #e0f5d1;
+    top: calc(100vh - 210px);
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+
+.white-box {
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.info-box, .menu-info {
+    text-align: right;
+    max-width: 50%;
+    overflow-y: auto;
+}
+
+.responsive-img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 850px) {
+    .block1, .block6 {
+        height: auto;
+        position: relative;
+    }
+
+    .block2, .block4 {
+        width: 100vw;
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+
+    .block3 {
+        width: calc(100vw - 20px);
+        left: 10px;
+        margin-top: 0;
+    }
+
+    .block5 {
+        top: auto;
+        position: relative;
+        width: 100vw;
+        left: 0;
+        height: 60px;
+        background: #e0f5d1;
+    }
+
+    .info-box, .menu-info {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to NĂM</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header, .footer {
+            background-color: #c7d9f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        .header h1, .footer h2 {
+            background-color: white;
+            padding: 10px;
+            margin: 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .info-box-right, .footer .menu-info-right {
+            text-align: right;
+            flex: 1;
+        }
+
+        .sidebar-container {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .sidebar {
+            background-color: #fef9c3;
+            width: 270px;
+            padding: 20px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+
+        .main-content {
+            background-color: white;
+            flex-grow: 1;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .main-content img.responsive-img {
+            width: 100%;
+            max-width: 49%;
+            height: auto;
+        }
+
+        .bottom-content {
+            background-color: #e0f5d1;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 5px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* Мобільна версія */
+        @media (max-width: 850px) {
+            .sidebar-container {
+                flex-direction: column;
+            }
+
+            .sidebar, .header, .footer {
+                width: 100%;
+            }
+
+            .main-content img.responsive-img {
+                max-width: 100%;
+            }
+
+            .bottom-content {
+                left: 0;
+                right: 0;
+            }
+
+            .header h1, .footer h2 {
+                font-size: 1.2rem;
+            }
+
+            .header .info-box-right, .footer .menu-info-right {
+                text-align: left;
+                padding: 10px;
+            }
+
+            .sidebar {
+                width: 100%;
+                border: none;
+                padding: 15px;
+            }
+
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .sidebar-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .bottom-content {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="header">
+        <div class="white-box-left">
+            <h1>Welcome to NĂM</h1>
+        </div>
+        <div class="info-box-right">
+            <p>At NĂM, we believe that every pastry tells a story. Rooted in the rich traditions of European baking, we offer a unique selection of handcrafted desserts that combine time-honored techniques with modern creativity.</p>
+        </div>
+    </div>
+
+    <div class="sidebar-container">
+
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="index.html">First</a></li>
+                    <li><a href="lab3.2.1.html">Flex</a></li>
+                    <li><a href="lab3.2.2.html">Grid</a></li>
+                    <li><a href="lab3.2.3.html">No flex, grid</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <img src="40.jpg" alt="Image 1" class="responsive-img">
+            <img src="41.jpg" alt="Image 2" class="responsive-img">
+        </div>
+
+        <div class="sidebar">
+            <p>Step into NĂM and leave behind the hustle and bustle of daily life. Our cozy café atmosphere invites you to relax and indulge in the little pleasures of life.</p>
+        </div>
+    </div>
+
+    <div class="bottom-content">
+        <p>At NĂM, we take pride in offering a diverse menu that caters to all tastes.</p>
+    </div>
+
+    <div class="footer">
+        <div class="white-box-left">
+            <h2>Visit Us</h2>
+        </div>
+        <div class="menu-info-right">
+            <p>Join us at one of our locations in Kyiv or Lviv, and experience the magic of European baking right here in Ukraine.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

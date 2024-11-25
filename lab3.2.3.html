@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Mobile Friendly</title>
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+
+        .block1, .block6 {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background: #c7d9f1;
+        }
+
+        .block1 .white-box, .block6 .white-box {
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .info-box, .menu-info {
+            text-align: center;
+            max-width: 100%;
+            margin-top: 10px;
+        }
+
+        .block2 {
+            width: 100%;
+            padding: 20px;
+            background: #fef9c3;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .block3 {
+            width: 100%;
+            padding: 0;
+            background: white;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .block3 img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        .block5 {
+            width: 100%;
+            height: auto;
+            padding: 20px;
+            background: #e0f5d1;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .block4 {
+            width: 100%;
+            padding: 20px;
+            background: #fef9c3;
+            text-align: center;
+        }
+
+        @media (max-width: 850px) {
+
+            .block1, .block2, .block3, .block4, .block5, .block6 {
+                width: 100%;
+                position: relative;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="block1">
+        <div class="white-box">
+            <h1>About Us</h1>
+        </div>
+        <div class="info-box">
+            <p>At NĂM, we believe that every pastry tells a story.</p>
+        </div>
+    </div>
+
+    <div class="block2">
+        <nav>
+            <ul>
+                <li><a href="index.html">First</a></li>
+                <li><a href="lab3.2.1.html">Flex</a></li>
+                <li><a href="lab3.2.2.html">Grid</a></li>
+                <li><a href="lab3.2.3.html">No flex, grid</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="block3">
+        <img src="61.jpg" alt="Image 1" class="responsive-img">
+        <img src="63.jpg" alt="Image 2" class="responsive-img">
+        <img src="52.jpg" alt="Image 3" class="responsive-img">
+    </div>
+
+    <div class="block5">
+        <p>At NĂM, we take pride in offering a diverse menu that caters to all tastes.</p>
+    </div>
+
+    <div class="block4">
+        <p>Step into NĂM and leave behind the hustle and bustle of daily life. Our cozy café atmosphere invites you to relax and indulge in the little pleasures of life.</p>
+    </div>
+    <div class="block6">
+        <div class="white-box">
+            <h2>Visit Us</h2>
+        </div>
+        <div class="menu-info">
+            <p>Join us at one of our locations in Kyiv or Lviv, and experience the magic of European baking right here in Ukraine.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
